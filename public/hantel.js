@@ -19,8 +19,15 @@ function updateVariables(data) {
     document.getElementById("lastevent").innerHTML = JSON.stringify(data);
     if (data.eventName === "MyEvent") {
         document.getElementById("counterevent").innerHTML = data.eventData;
+    }
     if (data.eventName === "Trainingevent") {
         document.getElementById("trainingevent").innerHTML = data.eventData;
+    }
+    if (data.eventName === "Trainingwiederholungen") {
+        document.getElementById("trainingwiederholungen").innerHTML = data.eventData;
+    }
+    if (data.eventName === "Trainingkadenz") {
+        document.getElementById("trainingkadenz").innerHTML = data.eventData;
     }
 }
 
@@ -37,9 +44,9 @@ async function setCounter() {
 
 async function getCounter() {
     // request the variable "counter"
-    var response = await axios.get(rootUrl + "/api/device/0/variable/counter");
-    var counter = response.data.result;
+    var response = await axios.get(rootUrl + "/api/device/0/variable/Wiederholungen");
+    var Wiederholungen = response.data.result;
 
     // update the html element
-    document.getElementById("counter").innerHTML = counter;
+    document.getElementById("Wiederholungen").innerHTML = counter;
 }
