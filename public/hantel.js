@@ -48,5 +48,5 @@ async function getCounter() {
     var Wiederholungen = response.data.result;
 
     // update the html element
-    document.getElementById("Wiederholungen").innerHTML = counter;
+    document.getElementById("Wiederholungen").innerHTML = Wiederholungen;
 }
